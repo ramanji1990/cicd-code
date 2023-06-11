@@ -13,23 +13,23 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: Maven@3
-  displayName: 'Maven pom.xml'
-  inputs:
-    mavenPomFile: '$(Parameters.mavenPOMFile)'
-    goals: install
+# - task: Maven@3
+#   displayName: 'Maven pom.xml'
+#   inputs:
+#     mavenPomFile: '$(Parameters.mavenPOMFile)'
+#     goals: install
 
-- task: Docker@2
-  displayName: buildAndPush
-  inputs:
-    containerRegistry: mydocker
-    repository: 'ram1993/my-java'
-    tags: latest
+# - task: Docker@2
+#   displayName: buildAndPush
+#   inputs:
+#     containerRegistry: mydocker
+#     repository: 'ram1993/my-java'
+#     tags: latest
 
-- task: Kubernetes@1
-  displayName: 'kubectl apply'
-  inputs:
-    kubernetesServiceEndpoint: myk8s
-    command: apply
-    useConfigurationFile: true
-    configuration: deployment
+# - task: Kubernetes@1
+#   displayName: 'kubectl apply'
+#   inputs:
+#     kubernetesServiceEndpoint: myk8s
+#     command: apply
+#     useConfigurationFile: true
+#     configuration: deployment
